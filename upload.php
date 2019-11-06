@@ -113,22 +113,29 @@ if($_SESSION['dept'] != 'admin') {
                 </div>
             </div>
         </div>
-        
+        <div class = "footer">
+            <center>Copyright <span id="year">2019</span> © | Developed by Kartikeya P. Malimath | VVCE</center>
+    </div> 
     </div>
-    <footer><center>Copyright 2019 © | Developed by Kartikeya P. Malimath | VVCE</center></footer>
-    
+   
 </body>
 
 <style>
-footer{ 
-  position:absolute; 
-  font-size:12px;
-  bottom:0; 
-  width:100%; 
-  height:20px; 
-  background: black;
-  color:grey;
-}
+.footer{ 
+              position: absolute;
+              padding-top: 4px;
+              width: 100%;
+			  padding-bottom:2px;	
+              bottom:0; 
+              margin : 0px;
+			  padding-left: 5rem; 
+			  padding-right: 5rem;
+			  height:30px; 
+			  background: black;
+			  color:grey;
+			  font-size: 16px;
+			}
+
 
 b {
     color : white;
@@ -136,7 +143,7 @@ b {
 </style>
 
 <script>
-
+document.getElementById("year").innerHTML = new Date().getFullYear();
 function dlt(id) {
     window.location.replace('function/delete.php?id='+id);
 }

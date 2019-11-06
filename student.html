@@ -105,7 +105,7 @@
 
 				</form>
 				<div class = "footer">
-					<center>Copyright 2019 © | Developed by Kartikeya P. Malimath | VVCE</center>
+					<center>Copyright <span id="year">2019</span> © | Developed by Kartikeya P. Malimath | VVCE</center>
 			</div>  
 
 
@@ -154,6 +154,8 @@
     <script src="js/main.js"></script>
 
 	<script type="text/javascript">
+		document.getElementById("year").innerHTML = new Date().getFullYear();
+
 		var d = new Date();
 		var n = d.getMonth();
 		console.log(n);

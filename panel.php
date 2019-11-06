@@ -50,7 +50,7 @@ if($_SESSION['dept'] != 'admin') {
     <a type="button" href="function/logout.php" class= "w3-bar-item w3-button">Logout</a>   
     </div>
 
-    <div style="margin-left:15%">
+    <div class="main" style="margin-left:15%">
 
         <div class="w3-container main1">
             <div class="row">
@@ -66,7 +66,7 @@ if($_SESSION['dept'] != 'admin') {
                 <tbody>
                 <?php 
                 
-                $stmt1 = "SELECT * FROM login WHERE flag = 0";
+                $stmt1 = "SELECT * FROM login WHERE flag = 1";
                 $res1 = $con->query($stmt1);
                 if ($res1->num_rows > 0){
                     while($row1 = $res1->fetch_assoc()){
@@ -75,6 +75,45 @@ if($_SESSION['dept'] != 'admin') {
                         if($row1['dept'] == "cse"){
                             echo "Computer Science & Engineering";
                         }    
+                        else if($row1['dept'] == "ise"){
+                            echo "Information Science & Engineering";
+                        }   
+                        else if($row1['dept'] == "ece"){
+                            echo "Elctronics & Communication Engineering";
+                        }   
+                        else if($row1['dept'] == "eee"){
+                            echo "Electrical & Electronics Engineering";
+                        }   
+                        else if($row1['dept'] == "cv"){
+                            echo "Civil Engineering";
+                        }   
+                        else if($row1['dept'] == "me"){
+                            echo "Mechanical Engineering";
+                        }  
+                        else if($row1['dept'] == "mba"){
+                            echo "MBA";
+                        }   
+                        else if($row1['dept'] == "tap"){
+                            echo "Training & Placement";
+                        }   
+                        else if($row1['dept'] == "lib"){
+                            echo "Library";
+                        }   
+                        else if($row1['dept'] == "acc"){
+                            echo "Accounts";
+                        }   
+                        else if($row1['dept'] == "admin"){
+                            echo "Admin";
+                        }   
+                        else if($row1['dept'] == "phy"){
+                            echo "Physics";
+                        }  
+                        else if($row1['dept'] == "che"){
+                            echo "Chemistry";
+                        }  
+                        else if($row1['dept'] == "math"){
+                            echo "Mathematics";
+                        }  
                         echo "</td>
                         <td><button class = 'btn btn-danger' id='{$row1['id']}' onclick='dlt(this.id)' style='width : 15vh'>Delete</button></td>
                         </tr>";
@@ -128,22 +167,30 @@ if($_SESSION['dept'] != 'admin') {
                 </div>
             </div>
         </div>
+        <div class = "footer">
+            <center>Copyright <span id="year">2019</span> © | Developed by Kartikeya P. Malimath | VVCE</center>
+    </div> 
         
     </div>
-    <footer><center>Copyright 2019 © | Developed by Kartikeya P. Malimath | VVCE</center></footer>
+    
     
 </body>
 
 <style>
-footer{ 
-  position:absolute; 
-  font-size:12px;
-  bottom:0; 
-  width:100%; 
-  height:20px; 
-  background: black;
-  color:grey;
-}
+.footer{ 
+              position: absolute;
+              padding-top: 4px;
+              width: 100%;
+			  padding-bottom:2px;	
+              bottom:0; 
+              margin : 0px;
+			  padding-left: 5rem; 
+			  padding-right: 5rem;
+			  height:30px; 
+			  background: black;
+			  color:grey;
+			  font-size: 16px;
+			}
 
 b {
     color : white;
@@ -151,6 +198,8 @@ b {
 </style>
 
 <script>
+
+document.getElementById("year").innerHTML = new Date().getFullYear();
 
 function dlt(id) {
     window.location.replace('function/delete.php?id='+id);

@@ -139,7 +139,7 @@ echo "
                   
                 </form>
                 <div class = "footer">
-                        <center>Copyright 2019 © | Developed by Kartikeya P. Malimath | VVCE</center>
+                        <center>Copyright <span id="year">2019</span> © | Developed by Kartikeya P. Malimath | VVCE</center>
 				</div>  
                 <div class="login100-more" style="background-image: url('images/bg-02.jpg');">
 				</div>
@@ -187,6 +187,9 @@ echo "
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
     <script src="js/main.js"></script>
+    <script>
+        document.getElementById("year").innerHTML = new Date().getFullYear();
+    </script>
 
 </body>
 </html>

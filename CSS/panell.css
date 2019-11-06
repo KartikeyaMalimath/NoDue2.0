@@ -6,6 +6,10 @@ body{
     padding: 30px 3px 30px 3px;
 }
 
+.main {
+  min-height:100%;
+    position:relative;
+}
 .imgcontainer {
     text-align: center;
     margin: 24px 0 12px 0;
