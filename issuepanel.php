@@ -35,12 +35,12 @@ if(!isset($_SESSION['dept'])) {
     <center><h4>Department of <?php $dept = $_SESSION['dept']; echo strtoupper($dept); ?></h4></center>
     <center><h5> Hall Ticket Issue</h5></center>
     </br></br>
-    <a href="deptpanel.php" class="w3-bar-item w3-button">Back</a> 
-    <a href="#Odd-Sem" onclick="openSem(event, 'oddsem')" class="w3-bar-item w3-button semlinks" >ODD Semister</a> 
-    <a href="#Even-Sem" onclick="openSem(event, 'evensem')" class="w3-bar-item w3-button semlinks" >EVEN Semister</a>
-    <a href="#My-profile" class="w3-bar-item w3-button">My Profile</a>
-    <a href="#" class="w3-bar-item w3-button">About</a> 
-    <a href="function/logout.php" class= "w3-bar-item w3-button">Logout</a>
+    <button type="button" onclick="window.location.replace('deptpanel.php')" class="w3-bar-item w3-button">Back</button> 
+    <button type="button" href="#Odd-Sem" onclick="openSem(event, 'oddsem')" class="w3-bar-item w3-button semlinks" >ODD Semister</button> 
+    <button type="button" href="#Even-Sem" onclick="openSem(event, 'evensem')" class="w3-bar-item w3-button semlinks" >EVEN Semister</button>
+    <!-- <button type="button" onclick="#My-profile" class="w3-bar-item w3-button">My Profile</button> -->
+    <button type="button" onclick="#" class="w3-bar-item w3-button">About</button> 
+    <button type="button" onclick="window.location.replace('function/logout.php');" class= "w3-bar-item w3-button">Logout</button>
     </div>
 
     <div style="margin-left:15%">
@@ -132,6 +132,13 @@ footer{
   background: black;
   color:grey;
 }
+
+.active {
+    width: 100%;
+    background-color : rgba(120,120,120, 0.8);;
+    padding : 10px;
+}
+
 </style>
 </body>
 

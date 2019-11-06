@@ -35,12 +35,12 @@ $dept = $_SESSION['dept'];
     <p><br/></p>
     <center><h4>Department of <?php $dept = $_SESSION['dept']; echo strtoupper($dept); ?></h4></center>
     </br></br>
-    <a href="#Odd-Sem" onclick="openSem(event, 'oddsem')" class="w3-bar-item w3-button semlinks" >ODD Semister</a> 
-    <a href="#Even-Sem" onclick="openSem(event, 'evensem')" class="w3-bar-item w3-button semlinks" >EVEN Semister</a>
-    <a href="issuepanel.php" class="w3-bar-item w3-button">Issue Hall-Ticket</a> 
-    <a href="#My-profile" class="w3-bar-item w3-button">My Profile</a>
-    <a href="#" class="w3-bar-item w3-button">About</a> 
-    <a href="function/logout.php" class= "w3-bar-item w3-button">Logout</a>
+    <button type="button" href="#Odd-Sem" onclick="openSem(event, 'oddsem')" class="w3-bar-item w3-button semlinks" >ODD Semister</button> 
+    <button type="button" href="#Even-Sem" onclick="openSem(event, 'evensem')" class="w3-bar-item w3-button semlinks" >EVEN Semister</button>
+    <button type="button" onclick="window.location.replace('issuepanel.php');" class="w3-bar-item w3-button">Issue Hall-Ticket</button> 
+    <!-- <a type="button" href="#My-profile" class="w3-bar-item w3-button">My Profile</a> -->
+    <button type="button" href="#" class="w3-bar-item w3-button">About</button> 
+    <button type="button" onclick="window.location.replace('function/logout.php')" class= "w3-bar-item w3-button">Logout</button>
     </div>
 
     <div style="margin-left:15%">
@@ -124,17 +124,25 @@ $dept = $_SESSION['dept'];
     <style>
 footer{ 
   position:absolute; 
-
   bottom:0; 
   width:100%; 
-  height:20px; 
+  height:25px; 
   background: black;
-  color:grey;
-  font-size:12px;
+  color:	#989898;
+  font-size:16px;
+  font-style : bold;
 }
 </style>
 
 </body>
+
+<style>
+.active {
+    width: 100%;
+    background-color : rgba(120,120,120, 0.8);;
+    padding : 10px;
+}
+</style>
 
 <!--Scripts-->
 <script>
@@ -153,8 +161,9 @@ function openSem(evt, sem) {
 }
 
 function display(id) {
-    window.location.href = ("depttable.php?sem="+id);
+    window.location.replace('depttable.php?sem='+id);
 }
+
 </script>
 
 

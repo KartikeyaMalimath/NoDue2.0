@@ -32,10 +32,10 @@ if(!isset($_SESSION['dept'])) {
         <img src="images/VVCE_logo.png" alt="Avatar" class="avatar">
     </div>
     <p><br/></p>
-    <a href="deptpanel.php" class="w3-bar-item w3-button">Back</a> 
-    <a href="#My-profile" class="w3-bar-item w3-button">My Profile</a> 
-    <a href="#" class="w3-bar-item w3-button">About</a> 
-    <a href="function/logout.php" class= "w3-bar-item w3-button">Logout</a>
+    <button type="button" onclick="window.location.replace('deptpanel.php')" class="w3-bar-item w3-button">Back</button> 
+    <!-- <button href="#My-profile" class="w3-bar-item w3-button">My Profile</a>  -->
+    <button type="button" onclick="#" class="w3-bar-item w3-button">About</button> 
+    <button type="button" onclick="window.location.replace('function/logout.php')" class= "w3-bar-item w3-button">Logout</button>
     </div>
 
     <div style="margin-left:15%">

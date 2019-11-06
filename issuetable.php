@@ -39,10 +39,10 @@ if(!isset($_SESSION['dept'])) {
         <img src="images/VVCE_logo.png" alt="Avatar" class="avatar">
     </div>
     <p><br/></p>
-    <a href="issuepanel.php" class="w3-bar-item w3-button">Back</a> 
-    <a href="#My-profile" class="w3-bar-item w3-button">My Profile</a> 
-    <a href="#" class="w3-bar-item w3-button">About</a>
-    <a href="function/logout.php" class= "w3-bar-item w3-button">Logout</a> 
+    <button type="button" onclick="window.location.replace('issuepanel.php')" class="w3-bar-item w3-button">Back</button> 
+    <!-- <button type="button" onclick="#My-profile" class="w3-bar-item w3-button">My Profile</button>  -->
+    <button type="button" onclick="#" class="w3-bar-item w3-button">About</button>
+    <button type="button" onclick="window.location.replace('function/logout.php')" class= "w3-bar-item w3-button">Logout</button> 
     </div>
 
     <div style="margin-left:15%">
@@ -96,7 +96,7 @@ if($result1->num_rows > 0) {
                     <td>{$row['Tap']}</td>
                     ";
                     if($row['Department'] == 'Due' || $row['Library'] == 'Due' || $row['Account'] == 'Due' || $row['Tap'] == 'Due') {
-                        echo "<td><button style='width: 100%; background:red;' type='button' dissabled>Issued</button></td>";
+                        echo "<td><button style='width: 100%; background:red;' type='button' dissabled>With-held</button></td>";
                     } else {
                         if($issue == 'Not Issued') {
                         echo "<td><button style='width: 100%;' type='button' id= ".$usn." onclick='issue(this.id)'>Issued</button></td>

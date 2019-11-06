@@ -50,8 +50,14 @@
                         $sem = $_SESSION['sem'];
                         $dept = $_GET['dept'];
                         $usn = $_SESSION['usn'];
-                        
-						echo strtoupper($usn);?>
+
+                        $query2 = "SELECT * FROM $dept where Sem = $sem AND USN= '$usn'";
+                        $result2 = $con->query($query2);
+                        $row2 = $result2->fetch_assoc();
+                        $name = $row2['Name'];
+
+                        echo strtoupper($usn)."<br>";
+                        echo "<p>".$name."</p>";?>
                     </span>
                     <table class='content-table'>
                     <thead>
@@ -129,16 +135,16 @@ echo "
 						<button class="login100-form-btn" type="submit" name="login" value="login">
 							logout
                         </button>
-                        <footer><center>Copyright 2019 © | Developed by Kartikeya P. Malimath | VVCE</center></footer>
-						
-					</div>
-					
-
-                    
-				</form>
-
-				<div class="login100-more" style="background-image: url('images/bg-02.jpg');">
+                    </div>  
+                  
+                </form>
+                <div class = "footer">
+                        <center>Copyright 2019 © | Developed by Kartikeya P. Malimath | VVCE</center>
+				</div>  
+                <div class="login100-more" style="background-image: url('images/bg-02.jpg');">
 				</div>
+                
+				
 			</div>
         </div>
        
@@ -146,11 +152,12 @@ echo "
     
 
 	<style>
-			footer{ 
+			.footer{ 
               position: absolute;
 			  padding-top: 4px;
 			  padding-bottom:2px;	
-			  bottom:0; 
+              bottom:0; 
+              margin : 0px;
 			  padding-left: 5rem; 
 			  padding-right: 5rem;
 			  height:25px; 

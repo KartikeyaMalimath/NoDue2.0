@@ -31,6 +31,8 @@
 
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
         
 </head>
 <body style="background-color: #666666;">
@@ -43,7 +45,7 @@
 					<center><img src="images/VVCE_logo.png" style="width: 90px; height:100px;"></center>
 				</br>
 					<span class="login100-form-title p-b-43">
-						Student No-Due Portal
+						<h5>Student No-Due Portal</h5>
                     </span>
                     
                     <div class="wrap-input100 validate-input" data-validate = "Valid Department required">
@@ -70,16 +72,16 @@
 					
 					
 					<div class="wrap-input100 validate-input" data-validate = "Valid Sem is required: Sem x">
-                    <select name="sem" class="input100 form-control" style="outline:none; border:0px;" >
+                    <select id="semselect" name="sem" class="input100 form-control" style="outline:none; border:0px;" >
                             <option disabled selected value></option>
-                            <option value= "1">Sem 1</option>  
+                            <!-- <option value= "1">Sem 1</option>  
                             <option value= "2">Sem 2</option>
                             <option value= "3">Sem 3</option>  
                             <option value= "4">Sem 4</option>
                             <option value= "5">Sem 5</option>  
                             <option value= "6">Sem 6</option>
                             <option value= "7">Sem 7</option>  
-                            <option value= "8">Sem 8</option>
+                            <option value= "8">Sem 8</option> -->
                         </select>
                         <span class="focus-input100"></span>
 						<span class="label-input100">Sem</span>
@@ -98,14 +100,14 @@
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn" type="submit" name="login" value="login">
 							Check
-                        </button>
-                        <footer><center>Copyright 2019 © | Developed by Kartikeya P. Malimath | VVCE</center></footer>
-						
+                        </button>						
 					</div>
-					
 
-                    
 				</form>
+				<div class = "footer">
+					<center>Copyright 2019 © | Developed by Kartikeya P. Malimath | VVCE</center>
+			</div>  
+
 
 				<div class="login100-more" style="background-image: url('images/bg-02.jpg');">
 				</div>
@@ -116,7 +118,7 @@
     
 
 	<style>
-			footer{ 
+			.footer{ 
               position: absolute;
 			  padding-top: 4px;
 			  padding-bottom:2px;	
@@ -150,6 +152,25 @@
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
     <script src="js/main.js"></script>
+
+	<script type="text/javascript">
+		var d = new Date();
+		var n = d.getMonth();
+		console.log(n);
+		if(n==1 || n==2 || n==3 || n==4 || n==5 || n==6) {
+			document.getElementById("semselect").options.add(new Option("Sem 2", "2"));
+			document.getElementById("semselect").options.add(new Option("Sem 4", "4"));
+			document.getElementById("semselect").options.add(new Option("Sem 6", "6"));
+			document.getElementById("semselect").options.add(new Option("Sem 8", "8"));
+		}
+		else if(n==0 || n==7 || n==8 || n==9 || n==10 || n==11){
+			document.getElementById("semselect").options.add(new Option("Sem 1", "1"));
+			document.getElementById("semselect").options.add(new Option("Sem 3", "3"));
+			document.getElementById("semselect").options.add(new Option("Sem 5", "5"));
+			document.getElementById("semselect").options.add(new Option("Sem 7", "7"));
+		}
+	
+	</script>
 
 </body>
 </html>

@@ -35,16 +35,16 @@ if(!isset($_SESSION['dept'])) {
     <center><h4><?php $dept = $_SESSION['dept']; if($dept == 'lib'){echo "Library";} 
     if($dept=="acc"){echo "Accounts";}if($dept=='tap'){echo "TAP";} ?> Department</h4></center>
     </br></br>
-    <a href="#" class="w3-bar-item w3-button">Home</a> 
-    <a href="#cse" onclick="openSem(event, 'cse')" class="w3-bar-item w3-button semlinks" >Computer Science</a> 
-    <a href="#ise" onclick="openSem(event, 'ise')" class="w3-bar-item w3-button semlinks" >Information Science</a>
-    <a href="#ece" onclick="openSem(event, 'ece')" class="w3-bar-item w3-button semlinks" >Electronics & Communication</a>
-    <a href="#eee" onclick="openSem(event, 'eee')" class="w3-bar-item w3-button semlinks" >Electricals & Electronics</a>
-    <a href="#cv" onclick="openSem(event, 'cv')" class="w3-bar-item w3-button semlinks" >Civil Engineering</a>
-    <a href="#me" onclick="openSem(event, 'me')" class="w3-bar-item w3-button semlinks" >Mechanical Engineering</a>
-    <a href="#mba" onclick="openSem(event, 'mba')" class="w3-bar-item w3-button semlinks" >MBA</a>
-    <a href="#" class="w3-bar-item w3-button">About</a> 
-    <a href="function/logout.php" class= "w3-bar-item w3-button">Logout</a>
+    <!-- <a href="#" class="w3-bar-item w3-button">Home</a>  -->
+    <a type="button" href="#cse" onclick="openSem(event, 'cse')" class="w3-bar-item w3-button semlinks" >Computer Science</a> 
+    <a type="button" href="#ise" onclick="openSem(event, 'ise')" class="w3-bar-item w3-button semlinks" >Information Science</a>
+    <a type="button" href="#ece" onclick="openSem(event, 'ece')" class="w3-bar-item w3-button semlinks" >Electronics & Communication</a>
+    <a type="button" href="#eee" onclick="openSem(event, 'eee')" class="w3-bar-item w3-button semlinks" >Electricals & Electronics</a>
+    <a type="button" href="#cv" onclick="openSem(event, 'cv')" class="w3-bar-item w3-button semlinks" >Civil Engineering</a>
+    <a type="button" href="#me" onclick="openSem(event, 'me')" class="w3-bar-item w3-button semlinks" >Mechanical Engineering</a>
+    <a type="button" href="#mba" onclick="openSem(event, 'mba')" class="w3-bar-item w3-button semlinks" >MBA</a>
+    <a type="button" href="#" class="w3-bar-item w3-button">About</a> 
+    <a type="button" href="function/logout.php" class= "w3-bar-item w3-button">Logout</a>
     </div>
 
     <div style="margin-left:17%">
@@ -494,6 +494,16 @@ footer{
   height:20px; 
   background: black;
   color:grey;
+}
+
+.heading {
+    color: white;
+}
+
+.active {
+    width: 100%;
+    background-color : rgba(120,120,120, 0.8);;
+    padding : 10px;
 }
 </style>
 </body>

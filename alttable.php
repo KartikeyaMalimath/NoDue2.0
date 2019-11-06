@@ -32,10 +32,10 @@ if(!isset($_SESSION['dept'])) {
         <img src="images/VVCE_logo.png" alt="Avatar" class="avatar">
     </div>
     <p><br/></p>
-    <a href="altpanel.php" class="w3-bar-item w3-button">Back</a> 
-    <a href="#My-profile" class="w3-bar-item w3-button">My Profile</a> 
-    <a href="#" class="w3-bar-item w3-button">About</a> 
-    <a href="function/logout.php" class= "w3-bar-item w3-button">Logout</a>
+    <a type="button" href="altpanel.php" class="w3-bar-item w3-button">Back</a> 
+    <!-- <a type="button" href="#My-profile" class="w3-bar-item w3-button">My Profile</a>  -->
+    <a type="button" href="#" class="w3-bar-item w3-button">About</a> 
+    <a type="button" href="function/logout.php" class= "w3-bar-item w3-button">Logout</a>
     </div>
 
     <div style="margin-left:15%">
@@ -109,6 +109,14 @@ echo "
 ?>
     </div>
 </div>
+<style>
+.active {
+    width: 100%;
+    background-color : rgba(120,120,120, 0.8);;
+    padding : 10px;
+}
+</style>
+
 </body>
 
 <!--script-->
