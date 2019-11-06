@@ -41,7 +41,8 @@ if(!isset($_SESSION['dept'])) {
     <p><br/></p>
     <a href="issuepanel.php" class="w3-bar-item w3-button">Back</a> 
     <a href="#My-profile" class="w3-bar-item w3-button">My Profile</a> 
-    <a href="#" class="w3-bar-item w3-button">About</a> 
+    <a href="#" class="w3-bar-item w3-button">About</a>
+    <a href="function/logout.php" class= "w3-bar-item w3-button">Logout</a> 
     </div>
 
     <div style="margin-left:15%">

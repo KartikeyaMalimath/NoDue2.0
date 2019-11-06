@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>VVCE No-Due portal</title>
+	<title>No-due Student</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -24,66 +24,130 @@
 	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/student.css">
 <!--===============================================================================================-->
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        
 </head>
 <body style="background-color: #666666;">
 	
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form" action="function/login.php">
+				<form class="login100-form validate-form" action="function/studentlogout.php">
 
 					<center><img src="images/VVCE_logo.png" style="width: 90px; height:100px;"></center>
 				</br>
 					<span class="login100-form-title p-b-43">
-						No-Due Portal Login
-					</span>
-					
-					
-					<div class="wrap-input100 validate-input" data-validate = "Valid Username is required: ex@abc.xyz">
-						<input class="input100" type="text" name="uname">
-						<span class="focus-input100"></span>
-						<span class="label-input100">Username</span>
-					</div>
-					
-					
-					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" type="password" name="pass">
-						<span class="focus-input100"></span>
-						<span class="label-input100">Password</span>
-					</div>
+                        <?php
+                        include ('database/db.php');
+                        session_start();
+                        
+                        $sem = $_SESSION['sem'];
+                        $dept = $_GET['dept'];
+                        $usn = $_SESSION['usn'];
+                        
+						echo strtoupper($usn);?>
+                    </span>
+                    <table class='content-table'>
+                    <thead>
+                        <tr>
+                        <th>Department</th>
+                        <th>Due Status</th>
+                        </tr>
+                    </thead>
+<?php
 
-					<div class="flex-sb-m w-full p-t-3 p-b-32">
-						<div class="contact100-form-checkbox">
-						
-							
-							</label>
-						</div>
-
-					</div>
-			
+$query1 = "SELECT * FROM $dept where Sem = $sem AND USN= '$usn'";
+$result1 = $con->query($query1);
+if($result1->num_rows > 0) {
+    if($row = $result1-> fetch_assoc()) {
+echo "
+                    <tbody>";
+                    if($row['Department'] == 'Due') {
+                        echo "<tr class='active-row'>";
+                    } else{
+                        echo "
+                        <tr>";}
+                        echo "
+                        <td>branch</td>
+                        <td>{$row['Department']}</td>
+                        </tr>";
+                    
+                    if($row['Library'] == 'Due') {
+                        echo "<tr class='active-row'>";
+                    } else{
+                        echo "
+                        <tr>"; }
+                        echo "
+                        <td>Library</td>
+                        <td>{$row['Library']}</td>
+                        </tr>";
+                    
+                    if($row['Account'] == 'Due') {
+                        echo "<tr class='active-row'>";
+                    } else{
+                        echo "
+                        <tr>"; }
+                        echo "
+                        <td>Account</td>
+                        <td>{$row['Account']}</td>
+                        </tr>";
+                    
+                    if($row['Tap'] == 'Due') {
+                        echo "<tr class='active-row'>";
+                    } else{
+                        echo "
+                        <tr>"; }
+                        echo "
+                        <td>Tap</td>
+                        <td>{$row['Tap']}</td>
+                        </tr>";
+                    
+                    if($row['Hallticket'] == 'Not Issued') {
+                        echo "<tr class='active-row'>";
+                    } else{
+                        echo "
+                        <tr class='active-test'>"; }
+                        echo "
+                        <td>Hallticket</td>
+                        <td>{$row['Hallticket']}</td>
+                        </tr>";
+                    
+                    echo"
+                    </tbody>";   
+    }
+}
+?>
+                </table>                
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn" type="submit" name="login" value="login">
-							Login
-						</button>
-						<footer><center>Copyright 2019 © | Developed by Kartikeya P. Malimath | VVCE</center></footer>
+							logout
+                        </button>
+                        <footer><center>Copyright 2019 © | Developed by Kartikeya P. Malimath | VVCE</center></footer>
+						
 					</div>
 					
 
-				
+                    
 				</form>
 
 				<div class="login100-more" style="background-image: url('images/bg-02.jpg');">
 				</div>
 			</div>
-		</div>
-	</div>
+        </div>
+       
+    </div>
+    
 
 	<style>
 			footer{ 
-			  position:absolute; 
+              position: absolute;
 			  padding-top: 4px;
 			  padding-bottom:2px;	
 			  bottom:0; 
@@ -115,7 +179,7 @@
 <!--===============================================================================================-->
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
-	<script src="js/main.js"></script>
+    <script src="js/main.js"></script>
 
 </body>
 </html>
