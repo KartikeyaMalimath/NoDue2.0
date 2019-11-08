@@ -36,8 +36,8 @@ if(!isset($_SESSION['dept'])) {
     <center><h5> Hall Ticket Issue</h5></center>
     </br></br>
     <button type="button" onclick="window.location.replace('deptpanel.php')" class="w3-bar-item w3-button">Back</button> 
-    <button type="button" href="#Odd-Sem" onclick="openSem(event, 'oddsem')" class="w3-bar-item w3-button semlinks" >ODD Semister</button> 
-    <button type="button" href="#Even-Sem" onclick="openSem(event, 'evensem')" class="w3-bar-item w3-button semlinks" >EVEN Semister</button>
+    <button type="button" href="#Odd-Sem" onclick="openSem(event, 'oddsem')" class="w3-bar-item w3-button semlinks" >ODD Semester</button> 
+    <button type="button" href="#Even-Sem" onclick="openSem(event, 'evensem')" class="w3-bar-item w3-button semlinks" >EVEN Semester</button>
     <!-- <button type="button" onclick="#My-profile" class="w3-bar-item w3-button">My Profile</button> -->
     <button type="button" onclick="#" class="w3-bar-item w3-button">About</button> 
     <button type="button" onclick="window.location.replace('function/logout.php');" class= "w3-bar-item w3-button">Logout</button>

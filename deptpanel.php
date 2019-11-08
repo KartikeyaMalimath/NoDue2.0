@@ -35,8 +35,8 @@ $dept = $_SESSION['dept'];
     <p><br/></p>
     <center><h4>Department of <?php $dept = $_SESSION['dept']; echo strtoupper($dept); ?></h4></center>
     </br></br>
-    <button type="button" href="#Odd-Sem" onclick="openSem(event, 'oddsem')" class="w3-bar-item w3-button semlinks" >ODD Semister</button> 
-    <button type="button" href="#Even-Sem" onclick="openSem(event, 'evensem')" class="w3-bar-item w3-button semlinks" >EVEN Semister</button>
+    <button type="button" href="#Odd-Sem" onclick="openSem(event, 'oddsem')" class="w3-bar-item w3-button semlinks" >ODD Semester</button> 
+    <button type="button" href="#Even-Sem" onclick="openSem(event, 'evensem')" class="w3-bar-item w3-button semlinks" >EVEN Semester</button>
     <button type="button" onclick="window.location.replace('issuepanel.php');" class="w3-bar-item w3-button">Issue Hall-Ticket</button> 
     <!-- <a type="button" href="#My-profile" class="w3-bar-item w3-button">My Profile</a> -->
     <button type="button" href="#" class="w3-bar-item w3-button">About</button> 

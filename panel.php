@@ -66,7 +66,7 @@ if($_SESSION['dept'] != 'admin') {
                 <tbody>
                 <?php 
                 
-                $stmt1 = "SELECT * FROM login WHERE flag = 1";
+                $stmt1 = "SELECT * FROM login WHERE flag = 0";
                 $res1 = $con->query($stmt1);
                 if ($res1->num_rows > 0){
                     while($row1 = $res1->fetch_assoc()){
@@ -141,7 +141,7 @@ if($_SESSION['dept'] != 'admin') {
                                         </div>  
                                         <div class="form-group">
                                           <label for="dept"><b>Department</b></label>
-                                          <select class="form-control" name="department" class="form-control" id="sel1">
+                                          <select class="form-control" name="department" class="form-control" id="sel1" required>
                                             <option disabled selected value> -- select an option -- </option>
                                             <option value= "cse">Computer Science & Engineering</option>
                                             <option value="ise">Information Science & Engineeirng</option>
@@ -167,12 +167,12 @@ if($_SESSION['dept'] != 'admin') {
                 </div>
             </div>
         </div>
-        <div class = "footer">
-            <center>Copyright <span id="year">2019</span> © | Developed by Kartikeya P. Malimath | VVCE</center>
-    </div> 
+         
         
     </div>
-    
+    <div class = "footer">
+            <center>Copyright <span id="year">2019</span> © | Developed by Kartikeya P. Malimath | VVCE</center>
+    </div>
     
 </body>
 
